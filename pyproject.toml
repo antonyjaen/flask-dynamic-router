@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "flask-dynamic-router"
+version = "0.1.0"
+authors = [
+  { name="Antony Jaen Viquez", email="tonyjaen0@gmail.com" },
+]
+description = "A Flask extension for dynamic and automatic route registration"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Framework :: Flask",
+]
+dependencies = [
+    "flask>=2.0.0",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/flask-dynamic-router"
+"Bug Tracker" = "https://github.com/flask-dynamic-router/issues"
