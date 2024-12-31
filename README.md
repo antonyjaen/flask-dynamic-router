@@ -1,6 +1,6 @@
 # Flask Dynamic Router
 
-A Flask extension that provides automatic and dynamic route registration for Flask applications.
+Flask extension that provides automatic and dynamic route registration for Flask applications, inspired by Next.js's file-system based routing..
 
 ## Installation
 
@@ -31,7 +31,7 @@ if __name__ == '__main__':
 
 ### Route Examples
 
-1. **Basic Route** (`routes/Root/__init__.py`):
+1. **Basic Route** (`routes/root/__init__.py`):
 ```python
 from flask import Blueprint
 
@@ -42,7 +42,7 @@ def index():
     return {'message': 'Welcome to the API'}
 ```
 
-2. **Dynamic Parameter** (`routes/Users/[userID]/__init__.py`):
+2. **Dynamic Parameter** (`routes/users/[user_id]/__init__.py`):
 ```python
 from flask import Blueprint
 
@@ -51,13 +51,9 @@ main = Blueprint('user_detail', __name__)
 @main.route('/')
 def get_user(user_id):
     return {'message': f'User details for ID: {user_id}'}
-
-@main.route('/profile')
-def get_profile(user_id):
-    return {'message': f'Profile for user ID: {user_id}'}
 ```
 
-3. **Nested Routes** (`routes/Products/[productID]/reviews/__init__.py`):
+3. **Nested Routes** (`routes/products/[productID]/reviews/__init__.py`):
 ```python
 from flask import Blueprint
 
@@ -91,7 +87,7 @@ The router follows a convention-based approach where your directory structure ma
 │   └── 📂 about
 │       └── 📄 __init__.py      ➜  🌐 /about
 │
-├── 📂 Users
+├── 📂 users
 │   ├── 📄 __init__.py          ➜  🌐 /users
 │   ├── 📂 [userID]             ➜  💫 Dynamic Parameter
 │   │   ├── 📄 __init__.py      ➜  🌐 /users/<user_id>
@@ -100,7 +96,7 @@ The router follows a convention-based approach where your directory structure ma
 │   └── 📂 settings
 │       └── 📄 __init__.py      ➜  🌐 /users/settings
 │
-└── 📂 Products
+└── 📂 products
     ├── 📄 __init__.py          ➜  🌐 /products
     └── 📂 [productID]          ➜  💫 Dynamic Parameter
         └── 📄 __init__.py      ➜  🌐 /products/<product_id>
@@ -111,8 +107,8 @@ The router follows a convention-based approach where your directory structure ma
 | Directory Structure | Generated Route | Type |
 |--------------------|-----------------|------|
 | `Root/__init__.py` | `/` | Static Route |
-| `Users/__init__.py` | `/users` | Static Route |
-| `Users/[userID]/__init__.py` | `/users/<user_id>` | Dynamic Route |
+| `users/__init__.py` | `/users` | Static Route |
+| `users/[userID]/__init__.py` | `/users/<user_id>` | Dynamic Route |
 | `Products/[productID]/__init__.py` | `/products/<product_id>` | Dynamic Route |
 
 ## Dynamic Parameters
