@@ -80,7 +80,7 @@ The router follows a convention-based approach where your directory structure ma
 
 ```
 📦 routes
-├── 📂 Root
+├── 📂 root
 │   ├── 📄 __init__.py          ➜  🌐 /
 │   ├── 📂 version
 │   │   └── 📄 __init__.py      ➜  🌐 /version
@@ -89,7 +89,7 @@ The router follows a convention-based approach where your directory structure ma
 │
 ├── 📂 users
 │   ├── 📄 __init__.py          ➜  🌐 /users
-│   ├── 📂 [userID]             ➜  💫 Dynamic Parameter
+│   ├── 📂 [user_id]             ➜  💫 Dynamic Parameter
 │   │   ├── 📄 __init__.py      ➜  🌐 /users/<user_id>
 │   │   └── 📂 profile
 │   │       └── 📄 __init__.py  ➜  🌐 /users/<user_id>/profile
@@ -98,7 +98,7 @@ The router follows a convention-based approach where your directory structure ma
 │
 └── 📂 products
     ├── 📄 __init__.py          ➜  🌐 /products
-    └── 📂 [productID]          ➜  💫 Dynamic Parameter
+    └── 📂 [product_id]          ➜  💫 Dynamic Parameter
         └── 📄 __init__.py      ➜  🌐 /products/<product_id>
 ```
 
@@ -106,10 +106,10 @@ The router follows a convention-based approach where your directory structure ma
 
 | Directory Structure | Generated Route | Type |
 |--------------------|-----------------|------|
-| `Root/__init__.py` | `/` | Static Route |
-| `users/__init__.py` | `/users` | Static Route |
-| `users/[userID]/__init__.py` | `/users/<user_id>` | Dynamic Route |
-| `Products/[productID]/__init__.py` | `/products/<product_id>` | Dynamic Route |
+| `root/__init__.py` | `/` | Static Route |
+| `user/__init__.py` | `/users` | Static Route |
+| `user/[userID]/__init__.py` | `/users/<user_id>` | Dynamic Route |
+| `product/[productID]/__init__.py` | `/products/<product_id>` | Dynamic Route |
 
 ## Dynamic Parameters
 
